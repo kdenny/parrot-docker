@@ -1,0 +1,91 @@
+Phrase,Word_1,Word_2,Category,Item
+light,light,-,Lighting,light
+bulb,bulb,-,Lighting,bulb
+lighting,lighting,-,Lighting,lighting
+fixture,fixture,-,Lighting,fixture
+hot water,hot,water,Electrical,hot water
+power,power,-,Electrical,power
+outlet,outlet,-,Electrical,outlet
+power,power,-,Electrical,power
+socket,socket,-,Electrical,socket
+electric,electric,-,Electrical,electric
+surge,surge,-,Electrical,surge
+fuse,fuse,-,Electrical,fuse
+switch,switch,-,Electrical,switch
+fan,fan,-,Electrical,fan
+ceiling fan,ceiling,fan,Electrical,ceiling
+track light,track,light,Electrical,track
+track lighting,track,lighting,Electrical,track
+floor,floor,-,Flooring,floor
+cement,cement,-,Flooring,cement
+tile,tile,-,Flooring,tile
+hardwood,hardwood,-,Flooring,hardwood
+stairs,stairs,-,Flooring,stairs
+floorboard,floorboard,-,Flooring,floorboard
+carpet,carpet,-,Flooring,carpet
+baseboard,baseboard,-,Flooring,baseboard
+heat,heat,-,HVAC,heat
+heating,heating,-,HVAC,heating
+vent,vent,-,HVAC,vent
+duct,duct,-,HVAC,duct
+air conditioning,air,conditioning,HVAC,air
+A/C,A/C,-,HVAC,A/C
+A C,A,C,HVAC,A
+air,air,-,HVAC,air
+temperature,temperature,-,HVAC,temperature
+thermostat,thermostat,-,HVAC,thermostat
+hot,hot,-,HVAC,hot
+cold,cold,-,HVAC,cold
+freezing,freezing,-,HVAC,freezing
+stove,stove,-,Utilities,stove
+microwave,microwave,-,Utilities,microwave
+dishwasher,dishwasher,-,Utilities,dishwasher
+dish washer,dish,washer,Utilities,dish
+disposal,disposal,-,Utilities,disposal
+garbage disposal,garbage,disposal,Utilities,garbage
+erator,erator,-,Utilities,erator
+fridge,fridge,-,Utilities,fridge
+refrigerator,refrigerator,-,Utilities,refrigerator
+freezer,freezer,-,Utilities,freezer
+oven,oven,-,Utilities,oven
+range,range,-,Utilities,range
+stovetop,stovetop,-,Utilities,stovetop
+ice maker,ice,maker,Utilities,ice
+washer,washer,-,Utilities,washer
+dryer,dryer,-,Utilities,dryer
+cabinet,cabinet,-,Etc,cabinet
+door,door,-,Etc,door
+closet,closet,-,Etc,closet
+shelf,shelf,-,Etc,shelf
+ceiling,ceiling,-,Etc,ceiling
+window,window,-,Etc,window
+windowsill,windowsill,-,Etc,windowsill
+window sill,window,sill,Etc,window
+lock,lock,-,Etc,lock
+key,key,-,Etc,key
+insulation,insulation,-,Etc,insulation
+railing,railing,-,Etc,railing
+banister,banister,-,Etc,banister
+water pressure,water,pressure,Plumbing,water
+sink,sink,-,Plumbing,sink
+drain,drain,-,Plumbing,drain
+draining,draining,-,Plumbing,draining
+faucet,faucet,-,Plumbing,faucet
+nozzle,nozzle,-,Plumbing,nozzle
+flush,flush,-,Plumbing,flush
+clogged,clogged,-,Plumbing,clogged
+flushing,flushing,-,Plumbing,flushing
+kitchen sink,kitchen,sink,Plumbing,kitchen
+toilet,toilet,-,Plumbing,toilet
+potty,potty,-,Plumbing,potty
+leak,leak,-,Plumbing,leak
+tub,tub,-,Plumbing,tub
+bathtub,bathtub,-,Plumbing,bathtub
+shower,shower,-,Plumbing,shower
+shower door,shower,door,Plumbing,shower
+shower head,shower,head,Plumbing,shower
+shower lining,shower,lining,Plumbing,shower
+plumber,plumber,-,Plumbing,plumber
+drywall,drywall,-,Wall,drywall
+wall,wall,-,Wall,wall
+paint,paint,-,Wall,paint

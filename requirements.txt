@@ -1,0 +1,9 @@
+Django
+django-cors-headers
+djangorestframework
+djangorestframework-jwt
+PyJWT
+requests
+twilio==5.7.0
+urllib3
+psycopg2
