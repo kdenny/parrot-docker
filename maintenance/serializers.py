@@ -33,7 +33,7 @@ class RoomSerializer(serializers.ModelSerializer):
     class Meta:
         model = Room
 
-        fields = ('name', 'id', 'items',)
+        fields = ('name', 'items',)
         depth = 1
 
 class MaintenanceItemSerializer(serializers.ModelSerializer):
