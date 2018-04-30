@@ -1,15 +1,17 @@
+#!/bin/bash
+
 NAME="parrot"
-DIR=/home/parrot/parrot-docker
-USER=parrot
-GROUP=parrot
+DIR=/home/parrotapp/parrot-docker
+USER=parrotapp
+GROUP=parrotapp
 WORKERS=3
-BIND=unix:/home/parrot/run/gunicorn.sock
+BIND=unix:/home/parrotapp/run/gunicorn.sock
 DJANGO_SETTINGS_MODULE=parrot.settings
 DJANGO_WSGI_MODULE=parrot.wsgi
 LOG_LEVEL=error
 
 cd $DIR
-source ./env/bin/activate
+source ../bin/activate
 
 export DJANGO_SETTINGS_MODULE=$DJANGO_SETTINGS_MODULE
 export PYTHONPATH=$DIR:$PYTHONPATH

@@ -1,5 +1,5 @@
 upstream app_server {
-    server unix:/home/parrot/run/gunicorn.sock fail_timeout=0;
+    server unix:/home/parrotapp/run/gunicorn.sock fail_timeout=0;
 }
 
 server {
@@ -12,11 +12,11 @@ server {
     keepalive_timeout 5;
     client_max_body_size 4G;
 
-    access_log /home/parrot/logs/nginx-access.log;
-    error_log /home/parrot/logs/nginx-error.log;
+    access_log /home/parrotapp/logs/nginx-access.log;
+    error_log /home/parrotapp/logs/nginx-error.log;
 
     location /static/ {
-        alias /home/parrot/static/;
+        alias /home/parrotapp/static/;
     }
 
     # checks for static file, if not found proxy to app
