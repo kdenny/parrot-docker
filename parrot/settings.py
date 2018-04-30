@@ -41,9 +41,9 @@ INSTALLED_APPS = [
     'posts',
     'rest_framework',
     'packagemanager',
+    'resident_management',
     'maintenance',
-    'maintenance_nlp',
-    'resident_management'
+    'maintenance_nlp'
 ]
 
 MIDDLEWARE = [
