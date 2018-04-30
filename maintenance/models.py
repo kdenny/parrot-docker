@@ -32,10 +32,10 @@ class Room(models.Model):
     name = models.CharField(max_length=150, primary_key=True)
 
     def __unicode__(self):
-        return str(str(self.name))
+        return str(self.name)
 
     def __str__(self):
-        return str(str(self.name))
+        return str(self.name)
 
 class MaintenanceItem(models.Model):
     name = models.TextField()
@@ -45,7 +45,7 @@ class MaintenanceItem(models.Model):
         return str(str(self.name))
 
     def __str__(self):
-        return str(str(self.name))
+        return str(self.name)
 
 class Issue(models.Model):
     name = models.TextField()
@@ -53,10 +53,10 @@ class Issue(models.Model):
     priority = models.CharField(max_length=25, null=True)
 
     def __unicode__(self):
-        return str(str(self.item.name)-str(self.name))
+        return str(self.item.name +'-' + self.name)
 
     def __str__(self):
-        return str(str(self.item.name)-str(self.name))
+        return str(self.item.name + '-' + self.name)
 
 class MaintenanceRequest(models.Model):
     resident = models.ForeignKey(Resident, on_delete=models.CASCADE)
@@ -70,10 +70,10 @@ class MaintenanceRequest(models.Model):
     status = models.CharField(max_length=100, default='pending')
 
     def __unicode__(self):
-        return str(self.resident.name + "-" + self.room.name + "-" + self.item.name + "-" + str(self.date_submitted))
+        return self.resident.name + "-" + self.room.name + "-" + self.item.name + "-" + str(self.date_submitted)
 
     def __str__(self):
-        return str(self.resident.name + "-" + self.room.name + "-" + self.item.name + "-" + str(self.date_submitted))
+        return self.resident.name + "-" + self.room.name + "-" + self.item.name + "-" + str(self.date_submitted)
 
 class MaintenanceUpdate(models.Model):
     comment = models.TextField()
@@ -83,10 +83,10 @@ class MaintenanceUpdate(models.Model):
     update_type = models.CharField(max_length=100)
 
     def __unicode__(self):
-        return str(str(self.request.id) + "-" + self.update_type + "-" + str(self.date))
+        return str(self.request.id) + "-" + self.update_type + "-" + str(self.date)
 
     def __str__(self):
-        return str(str(self.request.id) + "-" + self.update_type + "-" + str(self.date))
+        return str(self.request.id) + "-" + self.update_type + "-" + str(self.date)
 
 class Comment(models.Model):
     submitted_by = models.ForeignKey(Resident, on_delete=models.CASCADE)
