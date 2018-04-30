@@ -18,10 +18,10 @@ class Resident(models.Model):
     phone_number = models.CharField(max_length=20)
 
     def __unicode__(self):
-        return unicode(self.name)
+        return str(self.name)
 
     def __str__(self):
-        return unicode(self.name)
+        return str(self.name)
 
 
 
