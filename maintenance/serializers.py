@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from maintenance.models import MaintenanceRequest, MaintenanceUpdate, Comment, Room, MaintenanceItem, Issue, MaintReq
+from maintenance.models import MaintenanceRequest, MaintenanceUpdate, Comment, Room, MaintenanceItem, Issue
 
 class MaintenanceReadSerializer(serializers.ModelSerializer):
     class Meta:

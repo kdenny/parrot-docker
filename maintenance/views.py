@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render
-from maintenance.models import MaintenanceRequest, Room, MaintenanceItem, Issue, MaintReq
+from maintenance.models import MaintenanceRequest, Room, MaintenanceItem, Issue
 from maintenance.serializers import MaintenanceReadSerializer, MaintenancePostSerializer, MaintenanceUpdateSerializer, CommentSerializer, RoomSerializer, MaintenanceItemSerializer, NewMaintRequestSerializer, MaintReqReadSerializer
 from rest_framework.views import APIView
 from rest_framework import status
