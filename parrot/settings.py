@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'parrot.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'parrot_prod',
+        'NAME': 'parrot_db',
         'USER': 'parrot',
         'PASSWORD': 'password',
         'HOST': 'localhost', # set in docker-compose.yml
