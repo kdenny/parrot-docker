@@ -28,40 +28,6 @@ class Category(models.Model):
     def __str__(self):
         return unicode(self.name)
 
-class MaintenanceRequest(models.Model):
-    resident = models.ForeignKey(Resident, on_delete=models.CASCADE)
-    apartment_no = models.ForeignKey(Apartment, on_delete=models.CASCADE)
-    date_submitted = models.DateTimeField(auto_now_add=True)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    status = models.CharField(max_length=100, default='pending')
-    description = models.TextField()
-    staff = models.ManyToManyField(Staff)
-
-    def __unicode__(self):
-        return unicode(self.resident.name + "-" + self.category.name + "-" + str(self.date_submitted))
-
-    def __str__(self):
-        return unicode(self.resident.name + "-" + self.category.name + "-" + str(self.date_submitted))
-
-class MaintenanceUpdate(models.Model):
-    comment = models.TextField()
-    request = models.ForeignKey(MaintenanceRequest, related_name='updates', on_delete=models.CASCADE)
-    staff = models.ForeignKey(Staff, on_delete=models.CASCADE)
-    date = models.DateTimeField(auto_now_add=True)
-    update_type = models.CharField(max_length=100)
-
-    def __unicode__(self):
-        return unicode(str(self.request.id) + "-" + self.update_type + "-" + str(self.date))
-
-    def __str__(self):
-        return unicode(str(self.request.id) + "-" + self.update_type + "-" + str(self.date))
-
-class Comment(models.Model):
-    submitted_by = models.ForeignKey(Resident, on_delete=models.CASCADE)
-    request = models.ForeignKey(MaintenanceRequest, on_delete=models.CASCADE)
-    date = models.DateTimeField(auto_now_add=True)
-    text = models.TextField()
-
 class Room(models.Model):
     name = models.TextField()
 
@@ -92,7 +58,7 @@ class Issue(models.Model):
     def __str__(self):
         return unicode(str(self.item.name)-str(self.name))
 
-class MaintReq(models.Model):
+class MaintenanceRequest(models.Model):
     resident = models.ForeignKey(Resident, on_delete=models.CASCADE)
     apartment_no = models.ForeignKey(Apartment, on_delete=models.CASCADE)
     date_submitted = models.DateTimeField(auto_now_add=True)
@@ -108,3 +74,22 @@ class MaintReq(models.Model):
 
     def __str__(self):
         return unicode(self.resident.name + "-" + self.room.name + "-" + self.item.name + "-" + str(self.date_submitted))
+
+class MaintenanceUpdate(models.Model):
+    comment = models.TextField()
+    request = models.ForeignKey(MaintenanceRequest, related_name='updates', on_delete=models.CASCADE)
+    staff = models.ForeignKey(Staff, on_delete=models.CASCADE)
+    date = models.DateTimeField(auto_now_add=True)
+    update_type = models.CharField(max_length=100)
+
+    def __unicode__(self):
+        return unicode(str(self.request.id) + "-" + self.update_type + "-" + str(self.date))
+
+    def __str__(self):
+        return unicode(str(self.request.id) + "-" + self.update_type + "-" + str(self.date))
+
+class Comment(models.Model):
+    submitted_by = models.ForeignKey(Resident, on_delete=models.CASCADE)
+    request = models.ForeignKey(MaintenanceRequest, on_delete=models.CASCADE)
+    date = models.DateTimeField(auto_now_add=True)
+    text = models.TextField()

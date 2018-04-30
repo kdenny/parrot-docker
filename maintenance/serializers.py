@@ -45,7 +45,7 @@ class MaintenanceItemSerializer(serializers.ModelSerializer):
 
 class NewMaintRequestSerializer(serializers.ModelSerializer):
     class Meta:
-        model = MaintReq
+        model = MaintenanceRequest
 
 
         fields = ('resident', 'apartment_no', 'room', 'item', 'issue',  )
@@ -53,7 +53,7 @@ class NewMaintRequestSerializer(serializers.ModelSerializer):
 
 class MaintReqReadSerializer(serializers.ModelSerializer):
     class Meta:
-        model = MaintReq
+        model = MaintenanceRequest
 
 
         fields = ('resident', 'apartment_no', 'room', 'item', 'issue', 'date_submitted', 'description', 'priority', 'status', )

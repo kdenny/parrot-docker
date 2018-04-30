@@ -15,9 +15,9 @@ class MaintenanceListView(APIView):
 
     def get(self, request, apartment_key='0'):
         if (apartment_key == '0'):
-            maint_requests = MaintReq.objects.exclude(status='complete').order_by('date_submitted')
+            maint_requests = MaintenanceRequest.objects.exclude(status='complete').order_by('date_submitted')
         else:
-            maint_requests = MaintReq.objects.filter(apartment_no=apartment_key).order_by('date_submitted')
+            maint_requests = MaintenanceRequest.objects.filter(apartment_no=apartment_key).order_by('date_submitted')
 
         serializer = MaintReqReadSerializer(maint_requests, many=True)
         return Response(serializer.data)
