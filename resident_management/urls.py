@@ -8,5 +8,5 @@ urlpatterns = [
     url(r'^login/$', obtain_jwt_token),
     url(r'^verify_token/$', verify_jwt_token),
     url(r'^get_username/$', Username.as_view()),
-    # url(r'^resident/(?P<apt_no>[0-9]+)/home/$', ResidentHomeView.as_view()),
+    url(r'^resident/(?P<apt_no>[0-9]+)/home/$', ResidentHomeView.as_view()),
 ]
