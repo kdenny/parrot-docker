@@ -8,7 +8,7 @@ from django.shortcuts import render
 # -*- coding: utf-8 -*-
 
 from django.shortcuts import render
-from maintenance.models import MaintenanceRequest, MaintReq
+from maintenance.models import MaintenanceRequest
 from packagemanager.models import Package
 from maintenance.serializers import MaintReqReadSerializer
 from packagemanager.serializers import PackageReadSerializer
@@ -25,7 +25,7 @@ class ResidentHomeView(APIView):
 
     def get(self, request, apt_no='0'):
         if (apt_no != '0'):
-            maint_requests = MaintReq.objects.filter(apartment_no=apt_no).exclude(status='complete').order_by('date_submitted')
+            maint_requests = MaintenanceRequest.objects.filter(apartment_no=apt_no).exclude(status='complete').order_by('date_submitted')
             packages = Package.objects.filter(apartment_no=apt_no).filter(status='pending').order_by('date_received')
             pserializer = PackageReadSerializer(packages, many=True)
             mserializer = MaintReqReadSerializer(maint_requests, many=True)
