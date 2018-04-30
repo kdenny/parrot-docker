@@ -28,14 +28,14 @@ class Category(models.Model):
     def __str__(self):
         return str(self.name)
 
-class Room(models.Model):
-    name = models.TextField(primary_key=True)
-
-    def __unicode__(self):
-        return str(str(self.name))
-
-    def __str__(self):
-        return str(str(self.name))
+# class Room(models.Model):
+#     name = models.TextField(primary_key=True)
+#
+#     def __unicode__(self):
+#         return str(str(self.name))
+#
+#     def __str__(self):
+#         return str(str(self.name))
 
 class MaintenanceItem(models.Model):
     name = models.TextField()
