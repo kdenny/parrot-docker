@@ -29,7 +29,7 @@ class Category(models.Model):
         return str(self.name)
 
 class Room(models.Model):
-    name = models.TextField()
+    name = models.TextField(primary_key=True)
 
     def __unicode__(self):
         return str(str(self.name))
