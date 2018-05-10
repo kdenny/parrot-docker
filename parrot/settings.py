@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'packagemanager',
     'resident_management',
     'maintenance',
-    'maintenance_nlp'
+    'maintenance_nlp',
+    'complex_management'
 ]
 
 MIDDLEWARE = [
