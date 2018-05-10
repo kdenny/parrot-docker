@@ -20,7 +20,7 @@ class Property(models.Model):
 class Floorplan(models.Model):
     name = models.CharField(max_length=250)
     property = models.ForeignKey(Property, on_delete=models.CASCADE, related_name='floorplans')
-    rooms = models.ManyToManyField(Room, on_delete=models.CASCADE, related_name='floorplans_included_in')
+    rooms = models.ManyToManyField(Room, related_name='floorplans_included_in')
     floorplan_image = models.CharField(max_length=500)
     stock_picture = models.CharField(max_length=500)
 
