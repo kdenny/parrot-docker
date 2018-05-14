@@ -47,7 +47,7 @@ class FloorplanView(APIView):
 
                 return Response(srz.data)
             else:
-                f = Floorplan.objects.get(property=property_id)
+                f = Floorplan.objects.filter(property=property_id)
                 srz = FloorplanSerializer(f, many=True)
 
                 return Response(srz.data)
