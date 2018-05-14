@@ -10,8 +10,8 @@ from django.shortcuts import render
 from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework import status
-from .serializers import PropertySerializer, FloorplanSerializer
-from .models import Property, Floorplan, FloorplanRoom
+from .serializers import PropertySerializer, FloorplanSerializer, FloorplanRoomSerializer
+from .models import Property, Floorplan, FloorplanRoom, RoomItem
 
 # Create your views here.
 
@@ -91,5 +91,35 @@ class PropertyView(APIView):
         p.save()
 
         srz = PropertySerializer(p)
+
+        return Response(srz.data)
+
+class RoomItemList(APIView):
+
+    def get(self, request, room='0'):
+        if (room == '0'):
+            r = FloorplanRoom.objects.all()
+            srz = FloorplanRoomSerializer(r, many=True)
+
+            return Response(srz.data)
+        else:
+            p = FloorplanRoom.objects.get(id=room)
+            srz = FloorplanRoomSerializer(p)
+
+            return Response(srz.data)
+
+    def post(self, request, room='0'):
+        rid = request.data
+
+        r = FloorplanRoom.objects.get(id=room)
+
+        ri = RoomItem.objects.create(
+            name = rid['name']
+        )
+        ri.save()
+        r.room_items.add(ri)
+        r.save()
+
+        srz = FloorplanRoomSerializer(r)
 
         return Response(srz.data)
