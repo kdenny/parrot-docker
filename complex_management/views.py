@@ -34,17 +34,24 @@ def add_room_to_floorplan(room, floorplan):
 
 class FloorplanView(APIView):
 
-    def get(self, request, floorplan_id='0'):
-        if (floorplan_id == '0'):
+    def get(self, request, floorplan_id='0', property_id='0'):
+        if (floorplan_id == '0') and (property_id == '0'):
             f = Floorplan.objects.all()
             srz = FloorplanSerializer(f, many=True)
 
             return Response(srz.data)
         else:
-            f = Floorplan.objects.get(id=floorplan_id)
-            srz = FloorplanSerializer(f)
+            if property_id == '0':
+                f = Floorplan.objects.get(id=floorplan_id)
+                srz = FloorplanSerializer(f)
 
-            return Response(srz.data)
+                return Response(srz.data)
+            else:
+                f = Floorplan.objects.get(property=property_id)
+                srz = FloorplanSerializer(f, many=True)
+
+                return Response(srz.data)
+
 
     def post(self, request, floorplan_id='0'):
         if (floorplan_id == '0'):
@@ -76,7 +83,7 @@ class PropertyView(APIView):
 
             return Response(srz.data)
         else:
-            p = Property.objects.get(id=property)
+            p = Property.objects.get(id=property_id)
             srz = PropertySerializer(p)
 
             return Response(srz.data)
