@@ -22,5 +22,6 @@ urlpatterns = [
     path('', include('packagemanager.urls')),
     path('', include('maintenance.urls')),
     path('', include('maintenance_nlp.urls')),
-    path('', include('resident_management.urls'))
+    path('', include('resident_management.urls')),
+    path('', include('complex_management.urls')),
 ]
