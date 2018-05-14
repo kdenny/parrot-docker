@@ -34,20 +34,20 @@ def add_room_to_floorplan(room, floorplan):
 
 class FloorplanView(APIView):
 
-    def get(self, request, floorplan='0'):
-        if (floorplan == '0'):
+    def get(self, request, floorplan_id='0'):
+        if (floorplan_id == '0'):
             f = Floorplan.objects.all()
             srz = FloorplanSerializer(f, many=True)
 
             return Response(srz.data)
         else:
-            f = Floorplan.objects.get(id=floorplan)
+            f = Floorplan.objects.get(id=floorplan_id)
             srz = FloorplanSerializer(f)
 
             return Response(srz.data)
 
-    def post(self, request, floorplan='0'):
-        if (floorplan == '0'):
+    def post(self, request, floorplan_id='0'):
+        if (floorplan_id == '0'):
             fd = request.data
             complex = Property.objects.get(id=fd['complex']['id'])
             f = Floorplan.objects.create(
@@ -64,13 +64,13 @@ class FloorplanView(APIView):
             return Response(srz.data)
         else:
             room_data = request.data
-            data = add_room_to_floorplan(room_data, floorplan)
+            data = add_room_to_floorplan(room_data, floorplan_id)
             return Response(data)
 
 class PropertyView(APIView):
 
-    def get(self, request, property='0'):
-        if (property == '0'):
+    def get(self, request, property_id='0'):
+        if (property_id == '0'):
             p = Property.objects.all()
             srz = PropertySerializer(p, many=True)
 
@@ -96,22 +96,22 @@ class PropertyView(APIView):
 
 class RoomItemList(APIView):
 
-    def get(self, request, room='0'):
-        if (room == '0'):
+    def get(self, request, room_id='0'):
+        if (room_id == '0'):
             r = FloorplanRoom.objects.all()
             srz = FloorplanRoomSerializer(r, many=True)
 
             return Response(srz.data)
         else:
-            p = FloorplanRoom.objects.get(id=room)
+            p = FloorplanRoom.objects.get(id=room_id)
             srz = FloorplanRoomSerializer(p)
 
             return Response(srz.data)
 
-    def post(self, request, room='0'):
+    def post(self, request, room_id='0'):
         rid = request.data
 
-        r = FloorplanRoom.objects.get(id=room)
+        r = FloorplanRoom.objects.get(id=room_id)
 
         ri = RoomItem.objects.create(
             name = rid['name']
