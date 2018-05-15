@@ -14,7 +14,7 @@ class FloorplanSerializer(serializers.ModelSerializer):
         model = Floorplan
 
         fields = ('name', 'property', 'rooms', 'floorplan_image', 'stock_picture', 'id', )
-        depth = 1
+        depth = 2
 
 class FloorplanRoomSerializer(serializers.ModelSerializer):
     class Meta:
