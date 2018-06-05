@@ -128,6 +128,9 @@ class RoomItemList(APIView):
         r.room_items.add(ri)
         r.save()
 
-        srz = FloorplanRoomSerializer(r)
+        # srz = FloorplanRoomSerializer(r)
+
+        f = Floorplan.objects.get(id=r.floorplan.id)
+        srz = FloorplanSerializer(f)
 
         return Response(srz.data)
