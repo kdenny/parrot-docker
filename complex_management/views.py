@@ -66,7 +66,8 @@ class FloorplanView(APIView):
             if 'stock_picture' in fd:
                 f.stock_picture = fd['stock_picture']
             f.save()
-            srz = FloorplanSerializer(f, many=True)
+            fs = Floorplan.objects.all()
+            srz = FloorplanSerializer(fs, many=True)
 
             return Response(srz.data)
         else:
